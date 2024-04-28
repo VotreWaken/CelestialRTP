@@ -1,3 +1,3 @@
 # CelestialRTP
 
-https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
+![example workflow]https://github.com/VotreWaken/CelestialRTP/actions/workflows/dotnet.yml/badge.svg
