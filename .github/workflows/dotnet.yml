@@ -27,7 +27,7 @@ jobs:
       run: dotnet restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Build
-      run: dotnet build -c Release --no-restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      run: dotnet build --no-restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Test
       run: dotnet test --no-restore --verbosity normal
