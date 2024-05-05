@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AudioWaveOut/1.0.0": {
+        "runtime": {
+          "AudioWaveOut.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AudioWaveOut/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
