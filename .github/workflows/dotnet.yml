@@ -1,9 +1,16 @@
+
 name: .NET Core
+
+env:
+  AZURE_WEBAPP_NAME: aspnet-core-sample-deploy
+  AZURE_WEBAPP_PACKAGE_PATH: './AudioLibrary/AudioWaveOut'
+  NETCORE_VERSION: '3.1.101'
 
 on: [push, pull_request]
 
 jobs:
   build:
+
     name: Initialize build on .NET Core
     
     runs-on: windows-latest
@@ -14,12 +21,11 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.300
+        dotnet-version: 8.x
 
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Build
-      run: dotnet build -c Release --no-restore
+      run: dotnet build --no-restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
-    - name: Test
