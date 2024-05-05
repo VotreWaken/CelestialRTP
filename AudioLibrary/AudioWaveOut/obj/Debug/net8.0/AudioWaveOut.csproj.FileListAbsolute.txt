@@ -1,0 +1,15 @@
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\bin\Debug\net8.0\AudioWaveOut.exe
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\bin\Debug\net8.0\AudioWaveOut.deps.json
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\bin\Debug\net8.0\AudioWaveOut.runtimeconfig.json
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\bin\Debug\net8.0\AudioWaveOut.dll
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\bin\Debug\net8.0\AudioWaveOut.pdb
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.AssemblyInfoInputs.cache
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.AssemblyInfo.cs
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.csproj.CoreCompileInputs.cache
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.sourcelink.json
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.dll
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\refint\AudioWaveOut.dll
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.pdb
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\AudioWaveOut.genruntimeconfig.cache
+C:\Users\38096\Source\Repos\CelestialRTP\AudioLibrary\AudioWaveOut\obj\Debug\net8.0\ref\AudioWaveOut.dll
