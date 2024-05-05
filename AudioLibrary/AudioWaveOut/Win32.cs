@@ -275,8 +275,280 @@ namespace AudioWaveOut
             DATA = 0x03C0
         }
 
+        // Writes the number of cycles of the Performance Counter to a variable lpPerformanceCount
+        /// <param name="lpPerformanceCount">Performance Counter</param>
+        [DllImport("Kernel32.dll", EntryPoint = "QueryPerformanceCounter")]
+        public static extern bool QueryPerformanceCounter(out long lpPerformanceCount);
+
+
+        // Writes the number of cycles of the Performance Frequency to a variable lpFrequency
+        /// <param name="lpFrequency">Performance Frequency</param>
+        [DllImport("Kernel32.dll", EntryPoint = "QueryPerformanceFrequency")]
+        public static extern bool QueryPerformanceFrequency(out long lpFrequency);
+
+
+        // The timeSetEvent function fires the specified media timer event.
+        // The media timer runs in its own thread. Once an event is fired, it calls the
+        // specified callback function or sets or causes the specified event to fire.
+        /// <param name="msDelay">delay in ms</param>
+        /// <param name="msResolution">resolution(0 is the maximum available for a given PC), set in ms.</param>
+        /// <param name="handler">pointer to a procedure that will be called after a specified time interval has elapsed</param>
+        /// <param name="userCtx">This parameter is passed to the lpTimeProc handler and can be used at the discretion of the programmer</param>
+        /// <param name="eventType"> timer type.Two meanings possible</param>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "timeSetEvent")]
+        public static extern UInt32 TimeSetEvent(UInt32 msDelay, UInt32 msResolution, TimerEventHandler handler, ref UInt32 userCtx, UInt32 eventType);
+
+
+        // After finishing working with the timer, you need to delete it using the timeKillEvent function:
+        /// <param name="timerId">number assigned to the timer when it was created using timeSetEvent</param>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "timeKillEvent")]
+        public static extern UInt32 TimeKillEvent(UInt32 timerId);
+
+
+        // Create Timer Queue 
+        [DllImport("kernel32.dll", EntryPoint = "CreateTimerQueue")]
+        public static extern IntPtr CreateTimerQueue();
+
+
+        // Delete Timer Queue
+        /// <param name="TimerQueue">number assigned to the Timer Queue when it was created using CreateTimerQueue</param>
+        [DllImport("kernel32.dll", EntryPoint = "DeleteTimerQueue")]
+        public static extern bool DeleteTimerQueue(IntPtr TimerQueue);
+
+
+        // Create Timer Queue Timer
+        /// <param name="phNewTimer">Pointer to a buffer that receives the timer queue's timer handle when returning</param>
+        /// <param name="TimerQueue">Handle to the timer queue. This handle is returned by the CreateTimerQueue function.</param>
+        /// <param name="Callback">Pointer to an application-defined function to execute when the timer expires</param>
+        /// <param name="Parameter">The value of a single parameter that will be passed to the callback function.</param>
+        /// <param name="DueTime">The time in milliseconds relative to the current time that must pass before the first timer signal.</param>
+        /// <param name="Period">Timer period in milliseconds. If this parameter is zero, the timer receives the signal once</param>
+        /// <param name="Flags">Timer Flags</param>
+        [DllImport("kernel32.dll", EntryPoint = "CreateTimerQueueTimer")]
+        public static extern bool CreateTimerQueueTimer(out IntPtr phNewTimer, IntPtr TimerQueue, DelegateTimerProc Callback, IntPtr Parameter, uint DueTime, uint Period, uint Flags);
+
+
+        // Removes a timer from the timer queue and optionally waits for the current timer callbacks to complete before deleting the timer.
+        /// <param name="TimerQueue">Handle to the timer queue. This handle is returned by the CreateTimerQueue function.</param>
+        /// <param name="Timer">Queue timer handle. This handle is returned by the CreateTimerQueueTimer function</param>
+        /// <param name="CompletionEvent">Handle to an event object that will signal when the system has canceled the timer and all callback functions have completed</param>
+        [DllImport("kernel32.dll")]
+        public static extern bool DeleteTimerQueueTimer(IntPtr TimerQueue, IntPtr Timer, IntPtr CompletionEvent);
+
+
+        // function queries the timer device to determine its resolution.
+        /// <param name="timeCaps">
+        /// A pointer to a <see cref="TIMECAPS"/> structure.
+        /// This structure is filled with information about the resolution of the timer device.
+        /// </param>
+        /// <param name="sizeTimeCaps">
+        /// The size, in bytes, of the <see cref="TIMECAPS"/> structure.
+        /// </param>
+        /// <returns>
+        /// Returns <see cref="MMSYSERR_NOERROR"/> if successful or an error code otherwise.
+        /// Possible error codes include the following.
+        /// <see cref="MMSYSERR_ERROR"/>: General error code.
+        /// <see cref="TIMERR_NOCANDO"/>: The <paramref name="timeCaps"/> parameter is <see cref="NullRef{TIMECAPS}"/>,
+        /// or the <paramref name="sizeTimeCaps"/> parameter is invalid, or some other error occurred.
+        /// </returns>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "timeGetDevCaps")]
+        public static extern MMRESULT TimeGetDevCaps(ref TimeCaps timeCaps, UInt32 sizeTimeCaps);
+
+
+        // function requests a minimum resolution for periodic timers
+        /// <param name="uPeriod"> Minimum timer resolution, in milliseconds, for the application or device driver. A lower value specifies a higher (more accurate) resolution.</param>
+        /// <returns>
+        /// Returns <see cref="TIMERR_NOERROR"/> if successful or <see cref="TIMERR_NOCANDO"/>
+        /// if the resolution specified in <paramref name="uPeriod"/> is out of range.
+        /// </returns>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "timeBeginPeriod")]
+        public static extern MMRESULT TimeBeginPeriod(UInt32 uPeriod);
+
+
+        // function clears a previously set minimum timer resolution.
+        /// <param name="uPeriod">
+        /// Minimum timer resolution specified in the previous call to the <see cref="timeBeginPeriod"/> function.
+        /// </param>
+        /// <returns>
+        /// Returns <see cref="TIMERR_NOERROR"/> if successful or <see cref="TIMERR_NOCANDO"/>
+        /// if the resolution specified in <paramref name="uPeriod"/> is out of range.
+        /// </returns>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "timeEndPeriod")]
+        public static extern MMRESULT TimeEndPeriod(UInt32 uPeriod);
+
+
+        // The waveOutOpen function opens the given waveform-audio output device for playback.
+        /// <param name="hWaveOut">Pointer to a buffer that receives a handle identifying the open waveform-audio output device. Use the handle to identify the device when calling other waveform-audio output functions. This parameter might be NULL if the WAVE_FORMAT_QUERY flag is specified for fdwOpen.</param>
+        /// <param name="uDeviceID">Identifier of the waveform-audio output device to open. It can be either a device identifier or a handle of an open waveform-audio input device.</param>
+        /// <param name="lpFormat">Pointer to a WAVEFORMATEX structure that identifies the format of the waveform-audio data to be sent to the device. You can free this structure immediately after passing it to waveOutOpen.</param>
+        /// <param name="dwCallback">Pointer to a fixed callback function, an event handle, a handle to a window, or the identifier of a thread to be called during waveform-audio playback to process messages related to the progress of the playback. If no callback function is required, this value can be zero.</param>
+        /// <param name="dwInstance">User-instance data passed to the callback mechanism.</param>
+        /// <param name="dwFlags">Flags for opening the device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern MMRESULT waveOutOpen(ref IntPtr hWaveOut, int uDeviceID, ref WAVEFORMATEX lpFormat, DelegateWaveOutProc dwCallBack, int dwInstance, int dwFlags);
+
+
+        // The waveInOpen function opens the given waveform-audio input device for recording.
+        /// <param name="hWaveOut">Pointer to a buffer that receives a handle identifying the open waveform-audio input device.</param>
+        /// <param name="uDeviceID">Identifier of the waveform-audio input device to open. It can be either a device identifier or a handle of an open waveform-audio input device. You can use the following flag instead of a device identifier.</param>
+        /// <param name="lpFormat">Pointer to a WAVEFORMATEX structure that identifies the desired format for recording waveform-audio data. You can free this structure immediately after waveInOpen returns.</param>
+        /// <param name="dwCallback">Pointer to a fixed callback function, an event handle, a handle to a window, 
+        /// or the identifier of a thread to be called during waveform-audio recording to process messages related 
+        /// to the progress of recording. If no callback function is required, this value can be zero. 
+        /// For more information on the callback function, see waveInProc.</param>
+        /// <param name="dwInstance">User-instance data passed to the callback mechanism.</param>
+        /// <param name="dwFlags">Flags for opening the device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
         [DllImport("winmm.dll")]
-        public static extern long mciSendString(string strCommand,
-                StringBuilder strReturn, int iReturnLength, IntPtr oCallback);
+        public static extern MMRESULT waveInOpen(ref IntPtr hWaveIn, int deviceId, ref WAVEFORMATEX wfx, DelegateWaveInProc dwCallBack, int dwInstance, int dwFlags);
+
+
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "waveInOpen")]
+        public static extern MMRESULT waveInOpen2(ref IntPtr hWaveIn, int deviceId, ref WAVEFORMATEX wfx, Microsoft.Win32.SafeHandles.SafeWaitHandle callBackEvent, int dwInstance, int dwFlags);
+
+
+        // Starts input on the given waveform-audio input device.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern MMRESULT waveInStart(IntPtr hWaveIn);
+
+
+        // Queries a specified waveform device to determine its capabilities.
+        /// <param name="hwo">Identifier of the waveform-audio input device. It can be either a device identifier or a Handle to an open waveform-audio output device.</param>
+        /// <param name="pwoc">Pointer to a WAVEOUTCAPS structure to be filled with information about the capabilities of the device.</param>
+        /// <param name="cbwoc">Size, in bytes, of the WAVEOUTCAPS structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern uint waveInGetDevCaps(int index, ref WAVEINCAPS pwic, int cbwic);
+
+
+        // Get the waveInGetNumDevs function returns the number of waveform-audio input devices present in the system.
+        /// <returns>Returns the waveInGetNumDevs function returns the number of waveform-audio input devices present in the system.
+        /// </returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern uint waveInGetNumDevs();
+
+
+        // Queries a specified waveform device to determine its capabilities.
+        /// <param name="hwo">Identifier of the waveform-audio output device. It can be either a device identifier or a Handle to an open waveform-audio output device.</param>
+        /// <param name="pwoc">Pointer to a WAVEOUTCAPS structure to be filled with information about the capabilities of the device.</param>
+        /// <param name="cbwoc">Size, in bytes, of the WAVEOUTCAPS structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern uint waveOutGetDevCaps(int index, ref WAVEOUTCAPS pwoc, int cbwoc);
+
+
+        // Retrieves the number of waveform output devices present in the system.
+        /// <returns>The number of devices indicates success. Zero indicates that no devices are present or that an error occurred.</returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern uint waveOutGetNumDevs();
+
+
+        // Sends a data block to the specified waveform output device.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure containing information about the data block.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern MMRESULT waveOutWrite(IntPtr hWaveOut, WAVEHDR* pwh, int cbwh);
+
+
+        // Prepares a waveform data block for playback.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure that identifies the data block to be prepared. The buffer's base address must be aligned with the respect to the sample size.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "waveOutPrepareHeader", CharSet = CharSet.Auto)]
+        public static extern MMRESULT waveOutPrepareHeader(IntPtr hWaveOut, WAVEHDR* lpWaveOutHdr, int uSize);
+
+
+        // Cleans up the preparation performed by waveOutPrepareHeader.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure identifying the data block to be cleaned up.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, EntryPoint = "waveOutUnprepareHeader", CharSet = CharSet.Auto)]
+        public static extern MMRESULT waveOutUnprepareHeader(IntPtr hWaveOut, WAVEHDR* lpWaveOutHdr, int uSize);
+
+
+        // Stops input on the given waveform-audio input device.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", EntryPoint = "waveInStop", SetLastError = true)]
+        public static extern MMRESULT waveInStop(IntPtr hWaveIn);
+
+
+        // Stops input on a specified waveform output device and resets the current position to 0.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", EntryPoint = "waveInReset", SetLastError = true)]
+        public static extern MMRESULT waveInReset(IntPtr hWaveIn);
+
+
+        // Stops playback on a specified waveform output device and resets the current position to 0.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", EntryPoint = "waveOutReset", SetLastError = true)]
+        public static extern MMRESULT waveOutReset(IntPtr hWaveOut);
+
+
+        // Prepares a waveform data block for recording.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure that identifies the data block to be prepared. 
+        /// The buffer's base address must be aligned with the respect to the sample size.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern MMRESULT waveInPrepareHeader(IntPtr hWaveIn, WAVEHDR* pwh, int cbwh);
+
+
+        // Cleans up the preparation performed by waveInPrepareHeader.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure identifying the data block to be cleaned up.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern MMRESULT waveInUnprepareHeader(IntPtr hWaveIn, WAVEHDR* pwh, int cbwh);
+
+
+        // The waveInAddBuffer function sends an input buffer to the given waveform-audio input device. When the buffer is filled, the application is notified.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device.</param>
+        /// <param name="lpWaveOutHdr">Pointer to a WAVEHDR structure that identifies the buffer.</param>
+        /// <param name="uSize">Size, in bytes, of the WAVEHDR structure.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", EntryPoint = "waveInAddBuffer", SetLastError = true)]
+        public static extern MMRESULT waveInAddBuffer(IntPtr hWaveIn, WAVEHDR* pwh, int cbwh);
+
+
+        // Closes the specified waveform input device.
+        /// <param name="hWaveOut">Handle to the waveform-audio input device. If the function succeeds, the handle is no longer valid after this call.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true)]
+        public static extern Win32.MMRESULT waveInClose(IntPtr hWaveIn);
+
+
+        // Closes the specified waveform output device.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device. If the function succeeds, the handle is no longer valid after this call.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern Win32.MMRESULT waveOutClose(IntPtr hWaveOut);
+
+
+        // Pauses playback on a specified waveform output device.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll")]
+        public static extern Win32.MMRESULT waveOutPause(IntPtr hWaveOut);
+
+
+        // Restarts a paused waveform output device.
+        /// <param name="hWaveOut">Handle to the waveform-audio output device.</param>
+        /// <returns>Returns value of MMSYSERR.</returns>
+        [DllImport("winmm.dll", EntryPoint = "waveOutRestart", SetLastError = true)]
+        public static extern Win32.MMRESULT waveOutRestart(IntPtr hWaveOut);
+
+
     }
 }
