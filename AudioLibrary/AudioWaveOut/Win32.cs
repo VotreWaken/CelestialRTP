@@ -24,7 +24,7 @@ namespace AudioWaveOut
     // Win32 Class
     unsafe public class Win32
     {
-        // Const Variables
+        // Const Data
         public const int WAVE_MAPPER = -1;
         public const int WT_EXECUTEDEFAULT = 0x00000000;
         public const int WT_EXECUTEINIOTHREAD = 0x00000001;

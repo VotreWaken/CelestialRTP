@@ -14,11 +14,9 @@
 // License:
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //----------------------------------------------------------------------------
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AudioWaveOut
 {
