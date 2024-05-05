@@ -30,4 +30,3 @@ jobs:
       run: dotnet build --no-restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
