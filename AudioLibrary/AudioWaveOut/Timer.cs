@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------------------------------
-// File Name: Win32.cs
+// File Name: Timer.cs
 // 
 // Description: 
 // Implement various types of timers, That based && defined into Win32.cs Class
