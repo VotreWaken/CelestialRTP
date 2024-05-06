@@ -77,7 +77,7 @@ namespace AudioWaveOut
         }
 
         // Receive_TCP_STX_ETX
-        public void Receive_LH(Object sender, Byte[] data)
+        public void Receive_TCP(Object sender, Byte[] data)
         {
             lock (m_LockerReceive)
             {
