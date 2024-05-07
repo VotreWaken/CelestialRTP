@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CelestialRTP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14f3d16c9fe2c14675dbc3d2c20ed04315c581a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CelestialRTP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CelestialRTP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
