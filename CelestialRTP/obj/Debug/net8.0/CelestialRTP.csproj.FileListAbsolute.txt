@@ -1,0 +1,15 @@
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\bin\Debug\net8.0\CelestialRTP.exe
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\bin\Debug\net8.0\CelestialRTP.deps.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\bin\Debug\net8.0\CelestialRTP.runtimeconfig.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\bin\Debug\net8.0\CelestialRTP.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\bin\Debug\net8.0\CelestialRTP.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.AssemblyInfoInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.AssemblyInfo.cs
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.csproj.CoreCompileInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.sourcelink.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\refint\CelestialRTP.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\CelestialRTP.genruntimeconfig.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\CelestialRTP\obj\Debug\net8.0\ref\CelestialRTP.dll

@@ -1,0 +1,12 @@
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.AssemblyInfoInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.AssemblyInfo.cs
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.sourcelink.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\bin\Debug\net8.0\AudioWaveOutClassLibrary.deps.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\bin\Debug\net8.0\AudioWaveOutClassLibrary.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\bin\Debug\net8.0\AudioWaveOutClassLibrary.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\refint\AudioWaveOutClassLibrary.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\AudioWaveOutClassLibrary.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioWaveOutClassLibrary\obj\Debug\net8.0\ref\AudioWaveOutClassLibrary.dll
