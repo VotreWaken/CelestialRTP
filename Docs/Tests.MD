@@ -9,12 +9,15 @@ each test, and the packages involved. For further details, refer to the source c
 
 - **NUnit**: Provides the testing framework.
     - **Namespace**: `global using NUnit.Framework;`
+
     - **Install**: `dotnet add package NUnit`
 - **NLog**: Manages logging within the application and tests.
     - **Namespace**: `global using NLog;`, `global using NLog.Config;`
     - **Install**: `dotnet add package NLog`, `dotnet add package NLog.Config`, `dotnet add package NLog.Targets`
+
 - **Moq**: Used for mocking dependencies during tests.
     - **Namespace**: `global using Moq;`
+
     - **Install**: `dotnet add package Moq`
 
 ### Usage
@@ -39,6 +42,7 @@ To build and run the tests from the console:
 #### Logging
 
 - **Console Logging**: Logs are output to the console during test execution.
+
 - **File Logging**: Logs are written to `log.txt` located in the directory specified by `${basedir}../../../log.txt`. Ensure the directory exists or adjust the path in `nlog.config`.
 
 
@@ -54,6 +58,7 @@ To build and run the tests from the console:
 
 - **SetUp**
     - **Purpose**: Initializes the logging configuration using the NLog configuration file before any tests are run.
+
     - **Details**: Sets up NLog configuration to log to both the console and a file.
 - **TearDown**
     - **Purpose**: Handles any necessary cleanup after all tests are executed.
@@ -65,6 +70,7 @@ To build and run the tests from the console:
 - **Format**: XML.
 - **Targets**:
     - **Console**: Logs are output to the console.
+
     - **File**: Logs are written to a file named `log.txt` located in the project's base directory.
 - **Rules**:
     - Logs from all levels (Trace to Fatal) are written to both the console and the log file.
@@ -82,21 +88,26 @@ To build and run the tests from the console:
 
 - **Test_waveOutGetNumDevs_ReturnsNonNegativeValue**
     - **Purpose**: Verifies that `Win32.waveOutGetNumDevs` returns a non-negative number, which indicates a valid count of audio output devices.
+
     - **Expected Result**: The number of devices should be greater than or equal to 0.
 - **Test_waveOutGetNumDevs_NoError**
     - **Purpose**: Checks that `Win32.waveOutGetNumDevs` does not return an error code, ensuring proper function execution without errors.
+
     - **Expected Result**: The return value should not be `Win32.MMSYSERR.MMSYSERR_NOERROR`.
 
 #### Commented Tests
 
 - **Test_waveOutOpenAndClose**
     - **Purpose**: Ensures that opening and closing an audio output device works correctly.
+
     - **Expected Result**: Device should be successfully opened and closed without errors.
 - **Test_waveOutPrepareUnprepareHeader**
     - **Purpose**: Verifies the preparation and unpreparation of a WAVEHDR structure for audio output.
+
     - **Expected Result**: Both preparation and unpreparation should return 0, indicating success.
 - **Test_waveOutWrite**
     - **Purpose**: Tests writing audio data to an output device.
+
     - **Expected Result**: The `waveOutWrite` function should execute successfully, indicated by a return value of 0.
 
 ### 4. **WinSoundTests.cs**
@@ -111,19 +122,24 @@ To build and run the tests from the console:
 
 - **GetPlaybackNamesNotEmpty**
     - **Purpose**: Checks that the list of playback device names is not empty.
+
     - **Expected Result**: The list should not be null or empty.
 - **GetRecordingNamesNotEmpty**
     - **Purpose**: Verifies that the list of recording device names is not empty.
+
     - **Expected Result**: The list should not be null or empty.
 - **GetWaveInDeviceIdByNameNonExistingNameReturnsWaveMapper**
     - **Purpose**: Ensures that querying a non-existing device name returns `WAVE_MAPPER`.
+
     - **Expected Result**: The device ID should be `Win32.WAVE_MAPPER`.
 - **FlagToStringReturnsExpectedString**
     - **Purpose**: Tests the conversion of flags to string representation.
+
     - **Expected Result**: The string should match the expected flag description.
 
 #### Commented Test
 
 - **GetWaveInDeviceIdByNameExistingNameReturnsValidId**
     - **Purpose**: Checks that querying an existing device name returns a valid device ID.
+
     - **Expected Result**: Device ID should not be -1 for a known device name.
