@@ -39,7 +39,7 @@ namespace AudioWaveOut
         private IntPtr m_HandleTimerQueue;
         private GCHandle m_GCHandleTimerQueue;
 
-        //Delegates And Events
+        // Delegates And Events
         private global::AudioWaveOut.Win32.DelegateTimerProc m_DelegateTimerProc;
         public delegate void DelegateTimerTick();
         public event DelegateTimerTick TimerTick;

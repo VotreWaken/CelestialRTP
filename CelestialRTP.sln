@@ -7,13 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialRTP", "CelestialRT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AudioWaveOut", "AudioWaveOut", "{766801AD-6F44-4488-963B-166E0EE46902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioWaveOutClassLibrary", "AudioWaveOutClassLibrary\AudioWaveOutClassLibrary.csproj", "{5F70F0F8-0233-49F3-8E94-87FD9B459AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioWaveOutClassLibrary", "AudioWaveOutClassLibrary\AudioWaveOutClassLibrary.csproj", "{5F70F0F8-0233-49F3-8E94-87FD9B459AC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AudioLibraryUnitTests", "AudioLibraryUnitTests", "{BD87B51B-8B84-4352-84E0-51A942C787BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioWaveOutUnitTest", "AudioWaveOutUnitTest\AudioWaveOutUnitTest.csproj", "{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioWaveOutUnitTest", "AudioWaveOutUnitTest\AudioWaveOutUnitTest.csproj", "{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{7C5450DB-B97C-428F-8875-A3B3F9DADBE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AudioServer", "AudioServer", "{1A70236D-B2E8-4DD1-945D-1C82F9AE8966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioServer", "AudioServer\AudioServer.csproj", "{1E31E221-29DD-4FAC-A215-F6924902A539}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E31E221-29DD-4FAC-A215-F6924902A539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E31E221-29DD-4FAC-A215-F6924902A539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E31E221-29DD-4FAC-A215-F6924902A539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E31E221-29DD-4FAC-A215-F6924902A539}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5F70F0F8-0233-49F3-8E94-87FD9B459AC0} = {766801AD-6F44-4488-963B-166E0EE46902}
 		{6CBFC9A3-AF84-4903-82E1-3BAAAEB66A3C} = {BD87B51B-8B84-4352-84E0-51A942C787BB}
+		{1E31E221-29DD-4FAC-A215-F6924902A539} = {1A70236D-B2E8-4DD1-945D-1C82F9AE8966}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DDE883EF-0A40-4BA0-9B46-3A271410918D}

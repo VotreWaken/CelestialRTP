@@ -185,7 +185,7 @@ namespace AudioWaveOut
             return result;
         }
 
-        /// Mu-Law To Linear with the number of bits per sample 32
+        // Mu-Law To Linear with the number of bits per sample 32
         public static int[] MuLawToLinear32(Byte[] bytes, int bitsPerSample, int channels)
         {
             // Number of tracks

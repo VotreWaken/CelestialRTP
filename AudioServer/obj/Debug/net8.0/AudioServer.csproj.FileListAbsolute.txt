@@ -1,0 +1,12 @@
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.AssemblyInfoInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.AssemblyInfo.cs
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.csproj.CoreCompileInputs.cache
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.sourcelink.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\bin\Debug\net8.0\AudioServer.deps.json
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\bin\Debug\net8.0\AudioServer.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\bin\Debug\net8.0\AudioServer.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\refint\AudioServer.dll
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\AudioServer.pdb
+C:\Users\38096\source\repos\CelestialRTP\CelestialRTP\AudioServer\obj\Debug\net8.0\ref\AudioServer.dll

@@ -1,4 +1,4 @@
-2024-05-07 23:26:42.3020    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.FlagToStringReturnsExpectedString     Pass FlagToString_CorrectFlags_ReturnsExpectedString Test
-2024-05-07 23:26:42.3398    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetPlaybackNamesNotEmpty     Pass GetPlaybackNames_NotEmpty Test
-2024-05-07 23:26:42.3398    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetRecordingNamesNotEmpty     Pass GetRecordingNames_NotEmpty Test
-2024-05-07 23:26:42.3398    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetWaveInDeviceIdByNameNonExistingNameReturnsWaveMapper     Pass GetWaveInDeviceIdByName_NonExistingName_ReturnsWaveMapper Test
+2024-06-19 16:48:27.2816    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.FlagToStringReturnsExpectedString     Pass FlagToString_CorrectFlags_ReturnsExpectedString Test
+2024-06-19 16:48:27.3030    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetPlaybackNamesNotEmpty     Pass GetPlaybackNames_NotEmpty Test
+2024-06-19 16:48:27.3030    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetRecordingNamesNotEmpty     Pass GetRecordingNames_NotEmpty Test
+2024-06-19 16:48:27.3030    Trace: MethodBaseInvoker.InvokeWithNoArgs => RuntimeMethodHandle.InvokeMethod => WinSoundTests.GetWaveInDeviceIdByNameNonExistingNameReturnsWaveMapper     Pass GetWaveInDeviceIdByName_NonExistingName_ReturnsWaveMapper Test
